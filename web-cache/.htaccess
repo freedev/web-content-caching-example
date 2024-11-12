@@ -1,0 +1,21 @@
+# Header unset Last-Modified
+# FileETag none
+# ExpiresActive On
+# ExpiresDefault "access plus 1 years"
+
+<IfModule mod_headers.c>
+    # Images
+    <FilesMatch "\.(jpg|jpeg|png|gif)$">
+        Header set Cache-Control "max-age=604800, public"
+    </FilesMatch>
+
+    # Javascript, CSS 
+    <FilesMatch "\.(js|css)$">
+        Header set Cache-Control "max-age=604800"
+    </FilesMatch>
+
+    # HTML
+    <FilesMatch "\.(htm|html)$">
+        Header set Cache-Control "private, no-cache, max-age=30"
+    </FilesMatch>
+</IfModule>
