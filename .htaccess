@@ -3,8 +3,10 @@
 # ExpiresActive On
 # ExpiresDefault "access plus 1 years"
 
-RewriteEngine on
-RewriteRule .*\.git/.* - [F]
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule .*\.git/.* - [F]
+</IfModule>
 
 <IfModule mod_headers.c>
     # Images
@@ -17,8 +19,4 @@ RewriteRule .*\.git/.* - [F]
         Header set Cache-Control "max-age=604800"
     </FilesMatch>
 
-    # HTML cached for 1 day
-    <FilesMatch "\.(htm|html)$"> 
-        Header set Cache-Control "max-age=86400, public"
-    </FilesMatch>
 </IfModule>
