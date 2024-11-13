@@ -16,6 +16,6 @@
 
     # HTML
     <FilesMatch "\.(htm|html)$">
-        Header set Cache-Control "private, no-store"
+        Header set Cache-Control "no-store"
     </FilesMatch>
 </IfModule>

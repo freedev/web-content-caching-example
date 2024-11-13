@@ -16,6 +16,6 @@
 
     # HTML
     <FilesMatch "\.(htm|html)$">
-        Header set Cache-Control "private, no-cache, max-age=30"
+        Header set Cache-Control "no-cache"
     </FilesMatch>
 </IfModule>
